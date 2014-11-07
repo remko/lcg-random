@@ -1,0 +1,47 @@
+{
+	"name": "lcg-random",
+	"version": "1.0.0",
+	"description": "(Predictable) LCG Random Number Generator",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/remko/lcg-random"
+	},
+	"keywords": [
+		"random",
+		"generator",
+		"lcg",
+		"prng",
+		"rng"
+	],
+	"author": "Remko Tronçon",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/remko/lcg-random/issues"
+	},
+	"homepage": "http://el-tramo.be/lcg-random",
+	"devDependencies": {
+		"chai": "^1.9.2",
+		"mocha": "^2.0.1"
+	},
+	"scripts": {
+		"test": "mocha"
+	},
+	"testling": {
+		"harness": "mocha-tdd",
+		"files": "test/*.js",
+		"browsers": [
+			"ie/8..latest",
+			"firefox/17..latest",
+			"firefox/nightly",
+			"chrome/22..latest",
+			"chrome/canary",
+			"opera/12..latest",
+			"opera/next",
+			"safari/5.1..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2..latest"
+		]
+	}
+}
