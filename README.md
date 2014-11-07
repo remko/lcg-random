@@ -32,7 +32,10 @@ on every call:
 
 Returns a function that returns a random number between 0 and 1 every time it is called.
 
-The function used is *X<sub>n+1</sub> = (multiplier * X<sub>n</sub> + increment) % modulus*
+The function used is 
+
+> X<sub>n+1</sub> = (multiplier \* X<sub>n</sub> + increment) % modulus
+
 Every component of the function can be customized by setting it in the `options` argument.
 The default values are the ones from the [GNU C Library](http://www.gnu.org/software/libc/)'s 
 `rand()`.

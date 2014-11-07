@@ -1,6 +1,6 @@
 {
 	"name": "lcg-random",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "(Predictable) LCG Random Number Generator",
 	"main": "index.js",
 	"repository": {
