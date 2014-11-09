@@ -7,7 +7,7 @@ for generating random numbers. The random numbers are predictable/reproducable, 
 
 ## Installation
 
-    npm install lcg-random --save-dev
+    npm install lcg-random --save
 
 
 ## Usage
