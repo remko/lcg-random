@@ -1,8 +1,8 @@
 {
 	"name": "lcg-random",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "(Predictable) LCG Random Number Generator",
-	"main": "index.js",
+	"main": "lcg-random.js",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/remko/lcg-random"
