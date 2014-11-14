@@ -1,4 +1,4 @@
-# [lcg-random: (Predictable) LCG Random Number Generator](http://el-tramo.be/lcg-random)
+# [lcg-random: (Predictable) LCG Random Number Generator](https://el-tramo.be/lcg-random)
 
 Creates a [Linear Congruential Generator](http://en.wikipedia.org/wiki/Linear_congruential_generator)
 for generating random numbers. The random numbers are predictable/reproducable, which is useful for 
