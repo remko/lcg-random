@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^2.2.0",
     "eslint": "^0.17.1",
+    "ghooks": "^0.3.0",
     "mocha": "^2.2.1"
   },
   "scripts": {
@@ -48,5 +49,10 @@
       "iphone/6.0..latest",
       "android-browser/4.2..latest"
     ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "./node_modules/.bin/eslint ."
+    }
   }
 }
