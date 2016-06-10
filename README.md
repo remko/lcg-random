@@ -37,24 +37,23 @@ The function used is
 > X<sub>n+1</sub> = (multiplier \* X<sub>n</sub> + increment) % modulus
 
 Every component of the function can be customized by setting it in the `options` argument.
-The default values are the ones from the [GNU C Library](http://www.gnu.org/software/libc/)'s 
-`rand()`.
+The default values are the ones from Park and Miller's [MINSTD](https://en.wikipedia.org/wiki/Lehmer_random_number_generator).
 
 - **`options.seed`** - *number (0 &leq; `options.seed` &lt; `options.modulus`)*  
     Seed (start value) for the generator.  
-    Default: 0
+    Default: 1
 
 - **`options.modulus`** - *modulus (0 &lt; `options.modulus`)*  
     Modulus for the generator.  
-    Default: 2<sup>31</sup>
+    Default: 2<sup>31</sup>-1
 
 - **`options.multiplier`** - *modulus (0 &lt; `options.multiplier` &lt; `options.modulus`)*  
     Multiplier for the generator.  
-    Default: 1103515245 
+    Default: 7<sup>5</sup> 
 
 - **`options.increment`** - *modulus (0 &leq; `options.increment` &lt; `options.modulus`)*  
     Increment for the generator.  
-    Default: 12345
+    Default: 0
 
 
 ## Project Status
@@ -65,3 +64,22 @@ The default values are the ones from the [GNU C Library](http://www.gnu.org/soft
 
 [![Browser Support](https://ci.testling.com/remko/lcg-random.png)
 ](https://ci.testling.com/remko/lcg-random)
+
+
+## Changelog
+
+### 2.0.0 (2016-06-10)
+
+- Allow increment of 0 (enabling Lehmer RNGs) ([\#1](https://github.com/remko/lcg-random/issues/1))
+- Use [MINSTD](https://en.wikipedia.org/wiki/Lehmer_random_number_generator) as default values ([\#1](https://github.com/remko/lcg-random/issues/1))
+- Change default `seed` to 1 (to enable MINSTD)
+- Add bounds checks
+
+### 1.0.2 (2014-11-09)
+
+- Fix `index` in `package.json`
+
+### 1.0.1 (2014-11-07)
+
+- Initial version
+
