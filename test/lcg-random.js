@@ -27,4 +27,15 @@ describe('lcg-random', function () {
 			results[state] = true;
 		}
 	});
+
+	it('should support Lehmer random number generators', function () {
+		var generator = lcgRandom({
+			seed: 123456,
+			multiplier: Math.pow(7, 5),
+			modulus: Math.pow(2, 31)-1,
+			increment: 0
+		});
+		expect(Math.floor(generator()*1000)).to.equal(966);
+		expect(Math.floor(generator()*1000)).to.equal(129);
+	});
 });
