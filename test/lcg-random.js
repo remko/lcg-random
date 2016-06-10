@@ -38,4 +38,40 @@ describe('lcg-random', function () {
 		expect(Math.floor(generator()*1000)).to.equal(966);
 		expect(Math.floor(generator()*1000)).to.equal(129);
 	});
+
+	it('it should not allow negative multiplier', function () {
+		var options = { seed: 23, increment: 7, multiplier: 0, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow multiplier greater than modulus', function () {
+		var options = { seed: 23, increment: 7, multiplier: 111, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow negative increment', function () {
+		var options = { seed: 23, increment: -1, multiplier: 7, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow increment greater than modulus', function () {
+		var options = { seed: 23, increment: 111, multiplier: 7, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow negative seed', function () {
+		var options = { seed: -1, increment: 7, multiplier: 7, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow seed greater than modulus', function () {
+		var options = { seed: 111, increment: 7, multiplier: 7, modulus: 111 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
+	it('it should not allow seed 0 and increment 0', function () {
+		var options = { seed: 0, increment: 0 };
+		expect(function () { lcgRandom(options); }).to.throw(Error);
+	});
+
 });
