@@ -2,13 +2,13 @@
 
 function createLCGenerator(options) {
 	options = options || {};
-	var seed = options.seed || 0;
+	var seed = options.seed || 1;
 	var a = typeof options.multiplier === 'undefined' ? 
-		1103515245 : options.multiplier;
+		16807 : options.multiplier;
 	var c = typeof options.increment === 'undefined' ? 
-		12345 : options.increment;
+		0 : options.increment;
 	var m = typeof options.modulus === 'undefined' ?
-		2147483648 : options.modulus;
+		2147483647 : options.modulus;
 
 	var state = Math.abs(seed) || 0;
 	return function () {
